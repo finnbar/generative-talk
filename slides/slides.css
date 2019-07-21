@@ -7,10 +7,11 @@ body {
 
 /* Main two containers on page - slides and UI. */
 #slides {
-    height: 90vh;
+    height: 85vh;
     width: inherit;
     padding-left: 10%;
     padding-right: 10%;
+    margin-top: 5%;
 }
 
 #ui {
@@ -46,26 +47,37 @@ button {
 
 h1 {
     font-size: 10vh;
+    margin-top: 0;
 }
 
 h2 {
     font-size: 8.5vh;
+    margin-top: 0;
 }
 
 h3 {
     font-size: 7vh;
+    margin-top: 0;
 }
 
 h4 {
     font-size: 5.5vh;
+    margin-top: 0;
 }
 
 h5 {
     font-size: 4vh;
+    margin-top: 0;
 }
 
 h6 {
     font-size: 2.5vh;
+    margin-top: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 .title {
@@ -78,4 +90,18 @@ h6 {
 
 .ui-text {
     font-size: 2vh;
+}
+
+.note {
+    font-size: 2vh;
+}
+
+.left {
+    float: left;
+    width: 49%;
+}
+
+.right {
+    float: right;
+    width: 49%;
 }

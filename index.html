@@ -13,16 +13,57 @@
             <div data-slide="title" class="vcenter slide">
                 <div class="centered">
                     <h1 class="title" data-show="0">Generative Music</h1>
-                    <p class="subtitle" data-show="1">Or, why it's both easy and hard for computers to generate music.</p>
+                    <p class="subtitle" data-show="1">Or: why it is both easy and hard for computers to generate music.</p>
                 </div>
             </div>
-            <div data-slide="example" class="slide">
-                <h1>An Example Slide</h1>
+            <div data-slide="what" class="slide">
+                <h1>Generative Music?</h1>
                 <ul>
-                    <li data-hide="3">This shows on opening the slide, and hides on 3.</li>
-                    <li data-show="1" data-hide="2">This shows on 1 and hides on 2</li>
-                    <li data-show="2">This shows on 2</li>
-                    <li data-show="3">This shows on 3</li>
+                    <li data-show="1">Brian Eno made it happen!</li>
+                </ul>
+                <div><p data-show="2">I'll put a quote here.</p></div>
+                <ul>
+                    <li data-show="3">There are three different avenues we're going to consider:
+                        <ul>
+                            <li data-show="4">Rule-based combination of musical phrases</li>
+                            <li data-show="5">Generation of new musical phrases using music theory</li>
+                            <li data-show="6">Beyond music theory</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div data-slide="thesis" class="vcenter slide">
+                <h1 data-show="0">Thesis Statement:</h1>
+                <p class="subtitle" data-show="1">It's easy to generate music that sounds fine and pleasant, but very hard to generate music that actually provokes emotion.</p>
+                <!-- "Let's start with the first part of that statement." -->
+            </div>
+            <div data-slide="dice" class="slide">
+                <div>
+                    <div class="left">
+                        <h1>Rule-based Combination</h1>
+                        <ul>
+                            <li data-show="1">Mozart's Dice Game (1793)</li>
+                            <li data-show="2">Simply roll a pair of dice and pick the corresponding bar of music.</li>
+                            <li data-show="3">Different set of bars to choose from based on how many times you've rolled.</li>
+                            <li data-show="4">All sounds pretty similar though...</li>
+                            <!-- TODO: probably something about the fact that music in that time was somewhat rule-based (or at least older music was) -->
+                            <!-- Note to cover in words: much rule-based combination is similar. -->
+                        </ul>
+                    </div>
+                    <div class="right">
+                        <img src="resources/mozart-dice.png" />
+                        <p class="note">Source: Mozart's original publication (modified), hosted on <a href="http://www.playonlinedicegames.com/mozart">playonlinedicegames.com</a></p>
+                    </div>
+                </div>
+            </div>
+            <div data-slide="theory" class="slide">
+                <h1 data-show="0">Music Theory (oh no)</h1>
+                <ul>
+                    <li>Let's build an abstraction for <del>all of music</del> pitch!</li>
+                    <li>Here's a major scale. (Would be very cute if it's a musical animation.)</li>
+                    <li>Secretly though there's actually loads of these with the same liattern.</li>
+                    <li>We can reliresent these notes as numbers, and then melodies we make are indeliendent of key.</li>
+                    <li>New task: make lihrases as streams of numbers. (Demo?)</li>
                 </ul>
             </div>
             <div data-slide="end" class="vcenter slide">
