@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <meta charset="utf-8" />
+        <title>Generative Music Talk</title>
+        <link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="slides.css" media="screen" />
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript" src="slides.js"></script>
+    </head>
+    <body>
+        <div id="slides">
+            <div data-slide="title" class="vcenter slide">
+                <div class="centered">
+                    <h1 class="title" data-show="0">Generative Music</h1>
+                    <p class="subtitle" data-show="1">Or, why it's both easy and hard for computers to generate music.</p>
+                </div>
+            </div>
+            <div data-slide="example" class="slide">
+                <h1>An Example Slide</h1>
+                <ul>
+                    <li data-hide="3">This shows on opening the slide, and hides on 3.</li>
+                    <li data-show="1" data-hide="2">This shows on 1 and hides on 2</li>
+                    <li data-show="2">This shows on 2</li>
+                    <li data-show="3">This shows on 3</li>
+                </ul>
+            </div>
+            <div data-slide="end" class="vcenter slide">
+                <div class="centered">
+                    <h1 class="title">Thanks for listening!</h1>
+                    <p class="subtitle">Any questions?</p>
+                </div>
+            </div>
+        </div>
+        <div id="ui">
+            <p class="ui-text"><button onclick="next()">Okay, next.</button>
+            Slide: <span id="slide"></span></p>
+        </div>
+    </body>
+</html>
