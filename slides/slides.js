@@ -8,7 +8,10 @@ function getDescendants(elem) {
 }
 
 function uiUpdate() {
-    $('#slide').text(slides[slideIndex].elem.attributes['data-slide'].value);
+    const slideName = slides[slideIndex].elem.attributes['data-slide'].value;
+    const totalSub = slides[slideIndex].length - 1;
+    const slideProgress = (totalSub >= 0) ? `(${subslide+1}/${totalSub+1})` : '';
+    $('#slide').text(slideName + ' ' + slideProgress);
 }
 
 function resetSlide(slide) {
@@ -35,10 +38,17 @@ function toSlide(n) {
     next();
 }
 
+function slidePrompt() {
+    let res = prompt("Which slide?");
+    let slideNum = parseInt(res, 10);
+    if (slideNum >= 0 && slideNum < slides.length) toSlide(slideNum);
+}
+
 // Show everything for the current slide/subslide, then increment.
 // If there isn't anything left to do, move to the next slide.
 function next() {
     if (finished || !slides[slideIndex]) return;
+    uiUpdate();
     const currentAnimations = slides[slideIndex];
     if (subslide >= currentAnimations.length) {
         // If we're at the end of the presentation, hooray!
@@ -69,14 +79,15 @@ function addAtIndex(list, elem, index) {
 
 window.onload = () => {
     // Get all the slides on this page.
+    let slidesList = [];
     $('[data-slide]').each((_, elem) => {
         const slide = elem.attributes['data-slide'];
-        if (slide && $.inArray(elem, slides) < 0) {
-            slides.push(elem);
+        if (slide && $.inArray(elem, slidesList) < 0) {
+            slidesList.push(elem);
         }
     });
     // Set up a list of timings for each slide.
-    slides = slides.map((elem) => {
+    slides = slidesList.map((elem) => {
         $(elem).hide();
         let shows = [];
         let hides = [];
