@@ -106,3 +106,13 @@ img {
     float: right;
     width: 49%;
 }
+
+/* Opposite of strong */
+.weak {
+    color: rgb(200,200,200);
+}
+
+.quote {
+    font-style: italic;
+    font-weight: 100;
+}
