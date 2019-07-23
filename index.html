@@ -7,6 +7,7 @@
         <link rel="stylesheet" type="text/css" href="slides/slides.css" media="screen" />
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script type="text/javascript" src="slides/slides.js"></script>
+        <script type="text/javascript" src="demos/numberStream.js"></script>
     </head>
     <body>
         <div id="slides">
@@ -67,6 +68,10 @@
                 <img src="resources/cmaj-numbers.png" data-show="2" />
             </div>
             <!-- TODO: make a cute applet that takes a random stream of numbers and turns them into music! -->
+            <div data-slide="stream" class="slide" id="stream-applet">
+                <input data-show="0" type="text" name="number-stream" id="number-stream" />
+                <button onclick="streamApplet()">Go!</button>
+            </div>
             <div data-slide="time" class="slide">
                 <div>
                     <p><strong>Problem:</strong> we've only considered pitch, not rhythm.</p>

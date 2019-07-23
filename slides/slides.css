@@ -81,6 +81,10 @@ img {
     object-fit: contain;
 }
 
+input {
+    font-size: 4vh;
+}
+
 .title {
     font-size: 15vh;
 }
