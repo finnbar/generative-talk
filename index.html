@@ -5,16 +5,17 @@
         <title>Generative Music Talk</title>
         <link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="slides/slides.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="demos/demos.css" media="screen" />
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script type="text/javascript" src="slides/slides.js"></script>
-        <script type="text/javascript" src="demos/numberStream.js"></script>
+        <script type="text/javascript" src="demos/demos.js"></script>
     </head>
     <body>
         <div id="slides">
             <div data-slide="title" class="vcenter slide">
                 <div class="centered">
                     <h1 class="title" data-show="0">Generative Music</h1>
-                    <p class="subtitle" data-show="1">Or: they keep saying music and maths are interlinked but it's not making me a better composer</p>
+                    <p class="subtitle" data-show="1">Or: don't worry, composers aren't out of a job yet</p>
                     <p class="subtitle" data-show="0">By Finnbar Keating</p>
                 </div>
             </div>
@@ -67,14 +68,19 @@
                 <img src="resources/cmaj.png" data-show="1" data-hide="2" />
                 <img src="resources/cmaj-numbers.png" data-show="2" />
             </div>
-            <!-- TODO: make a cute applet that takes a random stream of numbers and turns them into music! -->
-            <div data-slide="stream" class="slide" id="stream-applet">
+            <div data-slide="stream" class="slide vcenter" id="stream-applet">
                 <input data-show="0" type="text" name="number-stream" id="number-stream" />
+                <input type="range" min="0" max="1" step="0.1" id="number-stream-gain" />
                 <button onclick="streamApplet()">Go!</button>
+                <ul data-show="1">
+                    <li>It sounds... okay</li>
+                    <li>It's not dissonant or horrible, it just lacks form</li>
+                    <li>Unlike the dice game, there's no phrasing really</li>
+                </ul>
             </div>
             <div data-slide="time" class="slide">
                 <div>
-                    <p><strong>Problem:</strong> we've only considered pitch, not rhythm.</p>
+                    <p>Notably we've only considered pitch, not rhythm.</p>
                     <p data-show="1"><strong>Solution: </strong> we introduce a grid, and go through each block of notes in turn.</p>
                 </div>
                 <img data-show="2" src="resources/sequencer.png" />
@@ -82,8 +88,12 @@
                 <!-- We know of some of these! -->
             </div>
             <div data-slide="sequencer" class="slide">
-                <p data-show="0">sequencer</p>
-                <!-- TODO: make a sequencer! See the moz one for an example, include Game of Life mode. -->
+                <div>
+                    <ul id="checkbox-grid">
+                    </ul>
+                </div>
+                <br />
+                <button data-show="0" onclick="buildSequencer()">Load sequencer</button>
             </div> 
             <div data-slide="midpoint" class="slide">
                 <p>We should return to our thesis statement!</p>
