@@ -69,25 +69,17 @@
                 <img src="resources/cmaj-numbers.png" data-show="2" />
             </div>
             <div data-slide="stream" class="slide vcenter" id="stream-applet">
-                <input data-show="0" type="text" name="number-stream" id="number-stream" />
+                <input data-show="0" type="text" name="number-stream" id="number-stream" value="3.1415926535" />
                 <input type="range" min="0" max="1" step="0.1" id="number-stream-gain" />
                 <button onclick="streamApplet()">Go!</button>
                 <ul data-show="1">
                     <li>It sounds... okay</li>
                     <li>It's not dissonant or horrible, it just lacks form</li>
-                    <li>Unlike the dice game, there's no phrasing really</li>
+                    <li>Unlike the dice game, there's no phrasing really, and we have no rhythm either</li>
                 </ul>
             </div>
-            <div data-slide="time" class="slide">
-                <div>
-                    <p>Notably we've only considered pitch, not rhythm.</p>
-                    <p data-show="1"><strong>Solution: </strong> we introduce a grid, and go through each block of notes in turn.</p>
-                </div>
-                <img data-show="2" src="resources/sequencer.png" />
-                <p data-show="3" class="centered">New task: make grid patterns that evolve.</p>
-                <!-- We know of some of these! -->
-            </div>
             <div data-slide="sequencer" class="slide">
+                <p>New task: arrange our music as a grid and build systems that evolve grid patterns.</p>
                 <div>
                     <ul id="checkbox-grid">
                     </ul>
@@ -108,15 +100,14 @@
                 <h1 data-show="3">Machine Learning <del>solves everything</del></h1>
                 <ul>
                     <!-- Like all good CS, we could throw machine learning at the problem. -->
-                    <li data-show="1"><strong>Stochastic models:</strong> treat our notes as events to observe, and we find various probabilities.</li>
-                    <li data-show="2"><strong>Neural networks with training data:</strong> if we feed it enough music surely it'll get the idea, right?</li>
+                    <li data-show="1"><strong>Stochastic models:</strong> treat our notes as events to observe, and we find various probabilities. Problem: you need a lot of training data.</li>
                     <li data-show="3"><strong>Learning with a critic:</strong> get a piece of software to rate our music. Problem: how??</li>
                 </ul>
             </div>
             <div data-slide="emotion" class="slide">
-                <h1 data-hide="2">How do we convey emotion in music, then?</h1>
+                <h1>How do we convey emotion in music, then?</h1>
                 <ul>
-                    <li data-show="1" data-hide="2">Honestly, I've no clue.</li>
+                    <li data-show="1">Honestly, I've no clue.</li>
                 </ul>
             </div>
             <div data-slide="emotion-2" class="slide vcenter">

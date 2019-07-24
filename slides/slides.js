@@ -119,4 +119,7 @@ window.onload = () => {
     $(slides[0].elem).show();
     uiUpdate();
     next();
+    $('body').keypress((e) => {
+        if (e.which == 13) next();
+    })
 }
