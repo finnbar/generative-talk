@@ -44,6 +44,7 @@ function streamApplet() {
 /* Sequencer Applet */
 
 let sequencerNodes = [];
+let loop;
 
 function buildSequencer() {
   // I'm sorry.
@@ -68,13 +69,14 @@ function buildSequencer() {
   if (audioContext.state == 'suspended') {
     audioContext.resume();
   }
-  setInterval(nextPos, 200);
+  loop = setInterval(nextPos, 200);
 }
 
 function stopSequencer() {
   for (let i=0; i<5; i++) {
     sequencerNodes[i].osc.stop();
   }
+  clearInterval(loop);
 }
 
 let pos = 7; // 0-7, which row is playing/highlighted.
@@ -97,20 +99,30 @@ function getChecksFromOffset(off) {
   });
 }
 
+function getXY(num) {
+  const x = num % 8;
+  const y = Math.floor(num / 8);
+  return [x,y];
+}
+
+function getIndex(x,y) {
+  if (y < 0) y += 5;
+  if (y > 4) y -= 5;
+  if (x < 0) x += 8;
+  if (x > 7) x -= 8;
+  return (y*8)+x;
+}
+
 function getNeighbours(num) {
   // Get the neighbours in our grid, the most painful operation.
   let neighbours = [];
-  if (num - 8 >= 0) neighbours.push(num-8);
-  if (num + 8 < 40) neighbours.push(num+8);
-  if (num % 8 != 0) {
-    neighbours.push(num-1);
-    if (num - 9 >= 0) neighbours.push(num-9);
-    if (num + 7 < 40) neighbours.push(num+7);
-  }
-  if (num % 8 != 7) {
-    neighbours.push(num+1);
-    if (num - 7 >= 0) neighbours.push(num-7);
-    if (num + 9 < 40) neighbours.push(num+9);
+  let [x,y] = getXY(num);
+  for (let i=-1; i<=1; i++) {
+    for (let j=-1; j<=1; j++) {
+      if (i != 0 || j != 0) {
+        neighbours.push(getIndex(x+i,y+j));
+      }
+    }
   }
   return neighbours;
 }
